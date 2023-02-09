@@ -1,0 +1,17 @@
+# 1.Kubernetes 集群的主要组件是什么？
+一个 Kubernetes 集群通常由以下组件组成：
+  Master 节点：管理集群并公开 API。
+  Worker 节点：运行应用程序。
+  etcd：分布式键值存储，用于存储配置数据。
+  API 服务器：公开 API 并与 etcd 存储通信。
+  调度器：将 Pod 分配给集群中的节点。
+  控制器管理器：管理集群的状态。
+   Kubelet：与 API 服务器通信并确保容器正常运行。
+
+
+
+
+apiVersion: 表示 API 版本
+kind: 表示要创建的对象的类型
+metadata: 元数据，如名称、标签和命名空间等
+spec: 对象的详细配置
