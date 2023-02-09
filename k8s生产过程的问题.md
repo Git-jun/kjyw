@@ -1,4 +1,4 @@
-# 1参考文章 https://kubesphere.io/zh/blogs/how-to-get-real-ip-in-pod/
+# 参考文章 https://kubesphere.io/zh/blogs/how-to-get-real-ip-in-pod/
 * 本文介绍了三种获取真实 IP 的部署方式：
   * 直接通过 NortPort 访问获取真实 IP
   * 受制于 Local 模式，可能会导致服务不可访问。需要保证对外提供入口的节点上，必须具有服务的负载。
@@ -12,7 +12,7 @@
 ** 当然也可以组合使用，对于并不需要获取客户端真实 IP 的服务，可以继续使用 Cluster 模式。**
 
 
-# 2k8s ingress获取真实IP地址配置
+# k8s ingress获取真实IP地址配置
 * 处理方法
   * 修改容器的配置文件
 * 配置文件：
