@@ -30,3 +30,5 @@ use-forwarded-headers: "true"
 
 
 
+# k8s域名无法解析问题
+* http://www.mydlq.club/article/78/
