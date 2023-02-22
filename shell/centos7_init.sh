@@ -35,6 +35,25 @@ net.ipv4.tcp_syncookies = 1
 # 增加连接跟踪表大小
 net.netfilter.nf_conntrack_max = 655350
 EOF
+
+#########
+# 调整系统内核参数
+echo "net.ipv4.tcp_fin_timeout = 30" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_tw_reuse = 1" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_tw_recycle = 1" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_keepalive_time = 300" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_max_tw_buckets = 36000" >> /etc/sysctl.conf
+echo "net.ipv4.ip_local_port_range = 1024 65000" >> /etc/sysctl.conf
+sysctl -p
+
+# 防止洪水攻击
+echo "net.ipv4.tcp_syncookies = 1" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_max_syn_backlog = 1024" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_synack_retries = 2" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_syn_retries = 2" >> /etc/sysctl.conf
+sysctl -p
+#########
+
 sysctl -p
 
 # 防止洪水攻击
